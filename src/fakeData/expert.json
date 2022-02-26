@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co/dmbYXX8/rsz-mechanic-5.jpg",
+    "name": "Sakib Arsalan",
+    "expertize": "Alrounder expert"
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co/pdMV8w6/mechanic3.webp",
+    "name": "David camarrson",
+    "expertize": "Alrounder expert"
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co/5jdy8pj/mechanic2.jpg",
+    "name": "Peter parkar",
+    "expertize": "Alrounder expert"
+  },
+  {
+    "id": 4,
+    "img": "https://i.ibb.co/7kwBgvV/rsz-1rsz-1pexels-artem-podrez-8985971.jpg",
+    "name": "Jordan Khemar",
+    "expertize": "Alrounder expert"
+  },
+  {
+    "id": 5,
+    "img": "https://i.ibb.co/b59cy6S/pexels-gustavo-fring-6870329.jpg",
+    "name": "Bruce lipton",
+    "expertize": "Alrounder expert"
+  }
+]
