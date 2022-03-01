@@ -1,18 +1,34 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const NavBarComponent = () => {
+  const handleNav = (e) => {
+    e.preventDefault();
+  };
   return (
-    <Navbar bg="primary" variant="dark">
-      <Container>
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#services">Services</Nav.Link>
-          <Nav.Link href="#expert">Pricing</Nav.Link>
-        </Nav>
-      </Container>
-    </Navbar>
+    <ul className="nav bg-light">
+      <li className="nav-item">
+        <Link className="nav-link active" to="/home">
+          Car Repair
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/service">
+          Services
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/pricing">
+          Pricing
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/logIn">
+          Log in
+        </Link>
+      </li>
+    </ul>
   );
 };
 
