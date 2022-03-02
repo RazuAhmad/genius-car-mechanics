@@ -1,16 +1,21 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import UseAuth from "../Hooks/UseAuth";
 
 const NavBarComponent = () => {
-  const handleNav = (e) => {
-    e.preventDefault();
-  };
+  const { newUserDetails, logOutWithGoogle } = UseAuth();
+
   return (
-    <ul className="nav bg-light">
+    <ul className="nav bg-light sticky-top">
       <li className="nav-item">
-        <Link className="nav-link active" to="/home">
-          Car Repair
+        <Link className="nav-link active" to="/">
+          Genius Car Mechanic
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/home">
+          Home
         </Link>
       </li>
       <li className="nav-item">
@@ -28,6 +33,20 @@ const NavBarComponent = () => {
           Log in
         </Link>
       </li>
+      {newUserDetails?.displayName && (
+        <li className="nav-item">
+          <button className="bg-primary">
+            Signed in as {newUserDetails.displayName}
+          </button>
+        </li>
+      )}
+      {newUserDetails?.email && (
+        <li className="nav-item">
+          <button onClick={logOutWithGoogle} className="bg-primary">
+            Log out
+          </button>
+        </li>
+      )}
     </ul>
   );
 };

@@ -3,8 +3,9 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import InitializeAuthentication from "../Firebase/firebase.initialize";
 
 const UseFirebase = () => {
@@ -39,6 +40,17 @@ const UseFirebase = () => {
         setErrorMsg(error);
       });
   };
+
+  useEffect(() => {
+    const unsubscribed = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setNewUserDetails(user);
+      } else {
+        setNewUserDetails({});
+      }
+    });
+    return () => unsubscribed;
+  }, [auth]);
 
   return {
     signInWithGoogle,
